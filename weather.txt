@@ -1,0 +1,32 @@
+Place: Delhi
+Date: 01/05/2024
+Temperature: 27 degree
+
+Place: Kolkata
+Date: 02/05/2024
+Temperature: 31 degree
+
+Place: Delhi
+Date: 02/05/2024
+Temperature: 29 degree
+
+Place: Mumbai
+Date: 01/05/2024
+Temperature: 28 degree
+
+Place: Delhi
+Date: 03/05/2024
+Temperature: 24 degree
+
+Place: Kolkata
+Date: 03/05/2024
+Temperature: 34 degree
+
+Place: Kolkata
+Date: 03/05/2024
+Temperature: 32 degree
+
+
+Place: Mumbai
+Date: 03/05/2024
+Temperature: 25 degree
