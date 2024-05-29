@@ -49,7 +49,7 @@ Apart from that you can also set
 ** _API and Playground requests will not be used to train any models_
 
 **`Playground - Completions`**
-
+<< Legacy >>
 
 **`Playground - Assistants`**
 The Assistants API allows you to build AI assistants within your own applications. An Assistant has instructions and can leverage models, tools, and files to respond to user queries. The Assistants API currently supports three types of tools: Code Interpreter, File Search, and Function calling. For details, refer How Assistant Work link below.
@@ -67,6 +67,9 @@ Second, let's try to call the above AI Assistant from a Python code. (Enabling *
 - Execute **`pip install openai --upgrade`** before executing the file
 
 Third, let's create and execute an AI Assistant with **Function Calling** capability
+- Refer [assistant-functioncalling.py](https://github.com/arijitdeb1/AI-101/blob/main/assistant-functioncalling.py)
+- Here the Assistant will use a function which calls yahoo finance apis to get the latest stock prices.
+- Replace the api-key with your key
 
 ## Useful Links
 * Open AI - https://platform.openai.com/
