@@ -27,12 +27,23 @@ Open AI exposes various APIs across multiple AI capabilities as below:
       
       ** _subscriptions for ChatGPT are completely different from Open AI payment plans and are charged separately._
    3. Once plan is confirmed, generate a API Key. Go to **Dashboard >> API Keys >> Create new secret key**.
-   4. Here on, we'll be using Postman to execute some of the popular APIs.
+   4. Here on, we'll be using Postman to execute some of the popular APIs. Download attached Postman Collection - `OpenAI.postman_collection.json` and configure as below -
+         
+      - Import the `OpenAI` collection in Postman 
+      - Select `OpenAI` collection >> Go to `Variables` Tab >> Set `OpenAIKey` with the generated api key from above
+      - The collection has following apis - 
+           
+        - List Models - _Api to List all models available with ChatGPT_
+        - Chat - _Api to start a chat_
+        - Playground-* - _Apis to imitate Playground features(explained below)_
+        - Dall.E - _Api for image generation_
+        - Whisper - _Api to convert speech to text_. etc
 
 ## Open AI Playground
 The OpenAI Playground is an interactive web-based tool that allows users to experiment with OpenAI's language models, such as GPT-3, in a user-friendly environment. It provides a simple interface where you can input text prompts and receive AI-generated responses, helping you explore the capabilities of these models without needing to write any code. This tool is particularly useful for testing different prompts, understanding how the models work, and getting a feel for their potential applications in various tasks like content generation, conversation simulation, and more. For any activity(chat/completion) on Playground, corresponding python/nodejs code can be generated using **`View Code`** capability 
 
-**`Playground - Chat`** provides an interface to work on ChatGPT like conversations using different GPT models. You can define 3 roles relevant to the conversation like -
+### **`Playground - Chat`** 
+provides an interface to work on ChatGPT like conversations using different GPT models. You can define 3 roles relevant to the conversation like -
 
 **System** - Set only once. Set the context and configure the behavior of the Assistant. [_example - "You're an assistant with vast knowledge on cars"_]
       
@@ -48,10 +59,12 @@ Apart from that you can also set
 
 ** _API and Playground requests will not be used to train any models_
 
-**`Playground - Completions`**
-<< Legacy >>
+### **`Playground - Completions`**
 
-**`Playground - Assistants`**
+<< Legacy - not covered >>
+
+### **`Playground - Assistants`**
+
 The Assistants API allows you to build AI assistants within your own applications. An Assistant has instructions and can leverage models, tools, and files to respond to user queries. The Assistants API currently supports three types of tools: Code Interpreter, File Search, and Function calling. For details, refer How Assistant Work link below.
 
 First we have setup an AI Assistant on Open AI Playground platform with below configurations - 
@@ -71,8 +84,44 @@ Third, let's create and execute an AI Assistant with **Function Calling** capabi
 - Here the Assistant will use a function which calls yahoo finance apis to get the latest stock prices.
 - Replace the api-key with your key
 
+## Fine Tuning
+If the generated response by existing LLM models are not as per your expectations, you can train and fine tune existing LLM models based on your data set following below steps -
+   
+1. Create a training dataset file with example input and outputs(JSONL format)
+2. Tune the model using the dataset.
+3. Use the tuned model.
+
+### **`Fine Tuning on Playground`**
+1. copy 10 such below contents in a json file.
+        
+        {"messages": [{"role": "system", "content": "You are a DevOps chatbot."}, {"role": "user", "content":"This tool is a platform used for containerization."}, {"role": "assistant", "content": "Docker"}]}
+2. Convert the json to a JSONL file. Upload and use ChatGPT to convert the file to JSONL file by specifying below prompt. 
+        
+        ![ScreenShot](/images/jsonl-prompt.PNG?raw=true)
+3. Refer attached [training-data-4-finetune.jsonl]()
+4. Go to `Playground` >> `Fine-tuning` >> `Create`
+5. ![ScreenShot](/images/tune-setup.PNG?raw=true) . Click `Create`.
+6. OpenAI will start the fine tuning job and will take a while to complete.
+
+   ![ScreenShot](/images/inprogress-tuning.PNG?raw=true)
+
+   ![ScreenShot](/images/inprogress-tuning2.PNG?raw=true)
+7. On success, a tuned new model will be created and can be visible under `Successful` tab
+
+   ![ScreenShot](/images/tune-success.PNG?raw=true)
+8. Go to `Playground` >> `Chat` >> Select the new `Fine Tuned` model from above. Input any 'user' content from the JSONL file in the user message prompt which will generate an output as specified by you in the JSONL file.
+
+   ![ScreenShot](/images/post-tune.PNG?raw=true)
+
+   Similar prompt if tried with any other model will generate something below
+
+   ![ScreenShot](/images/pre-tune.PNG?raw=true)
+
+### **`Fine Tuning using OpenAi Apis`**
+
 ## Useful Links
 * Open AI - https://platform.openai.com/
 * OPen AI API References - https://platform.openai.com/docs/api-reference/introduction
 * Open AI API Rate Limits - https://platform.openai.com/settings/organization/limits
 * How Assistant Work - https://platform.openai.com/docs/assistants/how-it-works
+* Fine Tuning - https://platform.openai.com/docs/guides/fine-tuning/preparing-your-dataset
