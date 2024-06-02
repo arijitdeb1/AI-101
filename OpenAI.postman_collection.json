@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "986cff67-bf4a-4bb5-b0c7-8e6088075fcc",
+		"name": "OpenAI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6548548"
+	},
+	"item": [
+		{
+			"name": "List Models",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openai.com/v1/models",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"models"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"gpt-3.5-turbo\",\r\n    \"messages\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"content\": \"Hello\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stop",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"gpt-3.5-turbo\",\r\n    \"stop\": \"4.\",\r\n    \"messages\": [\r\n        {\r\n            \"role\": \"system\",\r\n            \"content\": \"You are a helpful assistant\"\r\n        },\r\n        {\r\n            \"role\": \"user\",\r\n            \"content\": \"Suggest 5 titles for a travel book about India\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Playground-Chat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"gpt-3.5-turbo\",\r\n    \"messages\": [\r\n        {\r\n            \"role\": \"system\",\r\n            \"content\": \"You are a helpful assistant who can translate English to Spanish\"\r\n        },\r\n        {\r\n            \"role\": \"user\",\r\n            \"content\": \"What is your name?\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Playground-Chat-Temperature",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"gpt-3.5-turbo\",\r\n    \"temperature\": 1,            \r\n    \"messages\": [\r\n        {\r\n            \"role\": \"system\",\r\n            \"content\": \"You are a helpful assistant\"\r\n        },\r\n        {\r\n            \"role\": \"user\",\r\n            \"content\": \"Suggest a name for green parrot\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Playground-Completion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"davinci-002\",\r\n    \"prompt\": \"suggest a name for a girl child\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dall.E",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"dall-e-3\",\r\n    \"prompt\": \"A cute dolphin\",\r\n    \"n\": 1,\r\n    \"size\": \"1024x1024\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/images/generations",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"images",
+						"generations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Whisper",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "model",
+							"value": "whisper-1",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1ef193f0-c72f-4830-8bba-b65cd62ecec7"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/audio/translations",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"audio",
+						"translations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Instruction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"gpt-3.5-turbo\",\r\n    \"messages\": [\r\n        {\r\n            \"role\": \"system\",\r\n            \"content\": \"Your name is Arijit and you're a food cart owner. Try to be nice and helpful\"\r\n        },\r\n        {\r\n            \"role\": \"user\",\r\n            \"content\": \"What are the items available in food cart?\"\r\n        },\r\n        {\r\n            \"role\": \"assistant\",\r\n            \"content\": \"Hello! we have a variety of items in the food cart to choose from. We have Kebab, Chicken Biryani, Shawarma and Aloo Paratha. Is there any particular item you want to try?\"\r\n        },\r\n        {\r\n            \"role\": \"user\",\r\n            \"content\": \"I want to order something in veg?\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Summary",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let userMessage = `2020–present: ChatGPT, DALL-E and world leading AI\r",
+							"In 2020, OpenAI announced GPT-3, a language model trained on large internet datasets. GPT-3 is aimed at natural language answering of questions, but it can also translate between languages and coherently generate improvised text. It also announced that an associated API, named simply \"the API\", would form the heart of its first commercial product.[33]\r",
+							"\r",
+							"In 2021, OpenAI introduced DALL-E, a deep learning model that can generate digital images from natural language descriptions.[34]\r",
+							"\r",
+							"In December 2022, OpenAI received widespread media coverage after launching a free preview of ChatGPT, its new AI chatbot based on GPT-3.5. According to OpenAI, the preview received over a million signups within the first five days.[35] According to anonymous sources cited by Reuters in December 2022, OpenAI was projecting $200 million revenue in 2023 and $1 billion revenue in 2024.[36]\r",
+							"\r",
+							"As of January 2023, OpenAI was in talks for funding that would value the company at $29 billion, double the value of the company in 2021.[37] On January 23, 2023, Microsoft announced a new multi-year, multi-billion dollar (reported to be $10 billion) investment in OpenAI.[38][39]\r",
+							"\r",
+							"The investment is believed to be a part of Microsoft's efforts to integrate OpenAI's ChatGPT into the Bing search engine. Google announced a similar AI application (Bard), after ChatGPT was launched, fearing that ChatGPT could threaten Google's place as a go-to source for information.[40][41]\r",
+							"\r",
+							"On February 7, 2023, Microsoft announced that it is building AI technology based on the same foundation as ChatGPT into Microsoft Bing, Edge, Microsoft 365 and other products.[42]`;\r",
+							"\r",
+							"\r",
+							"userMessage = userMessage.replace(/\"/g, '\\\\\"');\r",
+							"userMessage = userMessage.replace(/\\n/g, '\\\\n');\r",
+							"userMessage = userMessage.replace(/\\t/g, '\\\\t');\r",
+							"\r",
+							"\r",
+							"pm.variables.set('userMessage', userMessage);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"gpt-3.5-turbo\",\r\n    \"messages\":[\r\n        {\r\n            \"role\":\"system\",\r\n            \"content\": \"You are a helpful assistant that provides a summary of every text entered by the user\"\r\n        },\r\n        {\r\n            \"role\":\"user\",\r\n            \"content\":\"{{userMessage}}\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Summary Max Token",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let userMessage = `2020–present: ChatGPT, DALL-E and world leading AI\r",
+							"In 2020, OpenAI announced GPT-3, a language model trained on large internet datasets. GPT-3 is aimed at natural language answering of questions, but it can also translate between languages and coherently generate improvised text. It also announced that an associated API, named simply \"the API\", would form the heart of its first commercial product.[33]\r",
+							"\r",
+							"In 2021, OpenAI introduced DALL-E, a deep learning model that can generate digital images from natural language descriptions.[34]\r",
+							"\r",
+							"In December 2022, OpenAI received widespread media coverage after launching a free preview of ChatGPT, its new AI chatbot based on GPT-3.5. According to OpenAI, the preview received over a million signups within the first five days.[35] According to anonymous sources cited by Reuters in December 2022, OpenAI was projecting $200 million revenue in 2023 and $1 billion revenue in 2024.[36]\r",
+							"\r",
+							"As of January 2023, OpenAI was in talks for funding that would value the company at $29 billion, double the value of the company in 2021.[37] On January 23, 2023, Microsoft announced a new multi-year, multi-billion dollar (reported to be $10 billion) investment in OpenAI.[38][39]\r",
+							"\r",
+							"The investment is believed to be a part of Microsoft's efforts to integrate OpenAI's ChatGPT into the Bing search engine. Google announced a similar AI application (Bard), after ChatGPT was launched, fearing that ChatGPT could threaten Google's place as a go-to source for information.[40][41]\r",
+							"\r",
+							"On February 7, 2023, Microsoft announced that it is building AI technology based on the same foundation as ChatGPT into Microsoft Bing, Edge, Microsoft 365 and other products.[42]`;\r",
+							"\r",
+							"\r",
+							"userMessage = userMessage.replace(/\"/g, '\\\\\"');\r",
+							"userMessage = userMessage.replace(/\\n/g, '\\\\n');\r",
+							"userMessage = userMessage.replace(/\\t/g, '\\\\t');\r",
+							"\r",
+							"\r",
+							"pm.variables.set('userMessage', userMessage);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"gpt-3.5-turbo\",\r\n    \"max_tokens\": 300,\r\n    \"messages\":[\r\n        {\r\n            \"role\":\"system\",\r\n            \"content\": \"You are a helpful assistant that provides a summary of every text entered by the user. The summary need to contain a maximum of 100 words\"\r\n        },\r\n        {\r\n            \"role\":\"user\",\r\n            \"content\":\"{{userMessage}}\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{OpenAIKey}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "OpenAIKey",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "OpenAIPaidKey",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
