@@ -1,0 +1,171 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "S801rKw4JZHN"
+      },
+      "outputs": [],
+      "source": [
+        "%pip install --upgrade openai\n",
+        "%pip install pandas\n",
+        "%pip install numpy"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%env OPENAI_API_KEY=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"
+      ],
+      "metadata": {
+        "id": "lh3tIWnELkR3"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#pandas - fast, powerful, flexible and easy to use open source data analysis and manipulation tool\n",
+        "import pandas as pd\n",
+        "\n",
+        "sentences = pd.Series([\n",
+        "    'The book I read was very interesting.',\n",
+        "    'Cooking can be a relaxing hobby.',\n",
+        "    'The scent of flowers filled the air.',\n",
+        "    'She wore a dress that sparkled under the lights.',\n",
+        "    'His determination was evident in his eyes.',\n",
+        "    'The city skyline looked magnificent during sunset.',\n",
+        "    'Music has a way of transcending boundaries.',\n",
+        "    'The old tree stood tall, bearing witness to centuries gone by.',\n",
+        "    'Traveling opens up new perspectives and experiences.',\n",
+        "    'The artist poured his emotions into the canvas.'\n",
+        "])\n",
+        "\n",
+        "#DataFrame - 2 dimensional data structure, like a 2 dimensional array, or a table with rows and columns\n",
+        "df=pd.DataFrame({ 'text': sentences })\n",
+        "\n",
+        "df"
+      ],
+      "metadata": {
+        "id": "sC6T8o3CKf-7"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from openai import OpenAI\n",
+        "client = OpenAI()\n",
+        "\n",
+        "\n",
+        "def determine_text_embedding(text, model=\"text-embedding-ada-002\"):\n",
+        "    return [client.embeddings.create(input = [text], model=model).data[0].embedding]"
+      ],
+      "metadata": {
+        "id": "9k-S5uHRKnem"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "determine_text_embedding(\"An example Sentence\")"
+      ],
+      "metadata": {
+        "id": "iMgq3qjZLc7_"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df=df.assign(\n",
+        "    embedding=(\n",
+        "        df[\"text\"].apply(lambda x : determine_text_embedding(x))\n",
+        "    )\n",
+        ")\n",
+        "\n",
+        "df"
+      ],
+      "metadata": {
+        "id": "YdGbx-DLMFJF"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "prompt = \"Tell me about Cooking\"\n",
+        "prompt_embedding=determine_text_embedding(prompt)"
+      ],
+      "metadata": {
+        "id": "H9LFewoVMRO-"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#numpy - support for large, multi-dimensional arrays and matrices,\n",
+        "#        along with a large collection of high-level mathematical functions to operate on these arrays.\n",
+        "import numpy as np\n",
+        "\n",
+        "# Calculate dot product to find out similarity\n",
+        "# Higher dot product => similar vectors\n",
+        "def determine_embedding_similarity(vec1, vec2):\n",
+        "    return np.dot(np.squeeze(np.array(vec1)),np.squeeze(np.array(vec2)))"
+      ],
+      "metadata": {
+        "id": "U_Z3XvWjMWSU"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df[\"similarity\"]=df[\"embedding\"].apply(lambda x: determine_embedding_similarity(x,prompt_embedding[0]))\n",
+        "df"
+      ],
+      "metadata": {
+        "id": "H5Egx8IoMcdr"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "index_of_highest_similarity = df['similarity'].idxmax()\n",
+        "text_with_highest_similarity = df.loc[index_of_highest_similarity, 'text']\n",
+        "text_with_highest_similarity"
+      ],
+      "metadata": {
+        "id": "sX4WusprMjAg"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}

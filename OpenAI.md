@@ -120,6 +120,31 @@ If the generated response by existing LLM models are not as per your expectation
 ### **`Fine Tuning using OpenAi Apis`**
 << ToDo >>
 
+### **`Embeddings`**
+Turn text into numbers, unlocking use cases like search.
+Embedding models - text-embedding-3-small, text-embedding-3-large
+
+OpenAI’s text embeddings measure the relatedness of text strings. Embeddings are commonly used for:
+
+**_Search_** (where results are ranked by relevance to a query string)                                                                                    
+**_Clustering_** (where text strings are grouped by similarity)                                                                   
+**_Recommendations_** (where items with related text strings are recommended)                                                 
+**_Anomaly detection_** (where outliers with little relatedness are identified)                        
+**_Diversity measurement_** (where similarity distributions are analyzed)                     
+**_Classification_** (where text strings are classified by their most similar label)
+
+An embedding is a vector (list) of floating point numbers. The distance between two vectors measures their relatedness. Small distances suggest high relatedness and large distances suggest low relatedness.
+
+Here is a sample code where we'll find the nearest match of a sentence from a group of sentences - 
+1. Review and upload notebook file `api-openai-02-embeddings.ipynb` to [Google CoLab](https://colab.research.google.com/)
+2. The code will calculate the embeddings for each sentence in the group 
+   ![ScreenShot](/images/group_embedding.PNG?raw=true)
+3. The code will now calculate the embedding for the input sentence.
+   ![ScreenShot](/images/input_embedding.PNG?raw=true)
+4. Now code will evaluate the most matching sentence in the group (_word `Cooking` is something that's common with input sentence_). A new column `similarity` has been identified which holds a float value. Higher this value, higher is matching proportion to the input sentence.
+   ![ScreenShot](/images/embedding_similarity.PNG?raw=true)
+5. So `Cooking can be a relaxing hobby` is closest match to input sentence.
+
 ## LangChain
 ![ScreenShot](/images/LangChain.PNG?raw=true)
 
