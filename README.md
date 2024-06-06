@@ -1,4 +1,5 @@
 # Understanding Modern AI: A Beginner's Guide to Trending Features
+![ScreenShot](/images/AI.PNG?raw=true)
 
 ## Description:
 As a newcomer to the fascinating world of artificial intelligence (AI), this guide aims to demystify some of the most talked-about AI concepts and features that are shaping the future of technology. We'll explore a range of trending AI capabilities, breaking down complex ideas into simple, understandable terms. This guide will cover the following topics:
