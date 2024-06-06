@@ -21,7 +21,7 @@
    },
    "outputs": [],
    "source": [
-    "%env OPENAI_API_KEY=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"
+    "%env OPENAI_API_KEY=----add your api key-------"
    ]
   },
   {
