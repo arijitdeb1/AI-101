@@ -120,6 +120,11 @@ If the generated response by existing LLM models are not as per your expectation
 ### **`Fine Tuning using OpenAi Apis`**
 << ToDo >>
 
+## LangChain
+![ScreenShot](/images/LangChain.PNG?raw=true)
+
+<< ToDo >>
+
 ## Useful Links
 * Open AI - https://platform.openai.com/
 * OPen AI API References - https://platform.openai.com/docs/api-reference/introduction
