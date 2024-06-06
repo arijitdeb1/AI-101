@@ -120,7 +120,7 @@ If the generated response by existing LLM models are not as per your expectation
 ### **`Fine Tuning using OpenAi Apis`**
 << ToDo >>
 
-### **`Embeddings`**
+## Embeddings
 Turn text into numbers, unlocking use cases like search.
 Embedding models - text-embedding-3-small, text-embedding-3-large
 
