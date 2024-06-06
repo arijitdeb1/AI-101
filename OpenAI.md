@@ -1,4 +1,4 @@
-# OpenAI 
+# ![ScreenShot](/images/OpenAI.PNG?raw=true)
 OpenAI is an artificial intelligence research organization that aims to ensure AI benefits all of humanity. Founded in December 2015, OpenAI conducts cutting-edge research in AI, developing advanced machine learning models and systems. The organization is known for creating widely recognized AI technologies, including:
 
 **GPT (Generative Pre-trained Transformer)**: A series of language models capable of understanding and generating human-like text. GPT-3, one of its most famous models, can perform a variety of tasks such as translation, question answering, and content creation.
