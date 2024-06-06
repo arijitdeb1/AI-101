@@ -142,11 +142,13 @@ Here is a sample code where we'll find the nearest match of a sentence from a gr
 3. The code will now calculate the embedding for the input sentence.
    ![ScreenShot](/images/input_embedding.PNG?raw=true)
 4. Now code will evaluate the most matching sentence in the group (_word `Cooking` is something that's common with input sentence_). A new column `similarity` has been identified which holds a float value. Higher this value, higher is matching proportion to the input sentence.
-   ![ScreenShot](/images/embedding_similarity.PNG?raw=true)
+   
+    ![ScreenShot](/images/embedding_similarity.PNG?raw=true)
 5. So `Cooking can be a relaxing hobby` is closest match to input sentence.
 
 ## LangChain
-![ScreenShot](/images/LangChain.PNG?raw=true)
+
+![ScreenShot](/images/LangChain.png?raw=true)
 
 << ToDo >>
 
