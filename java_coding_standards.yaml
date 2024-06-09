@@ -1,0 +1,70 @@
+
+java_coding_standards:
+  naming_conventions:
+    classes: 
+      pattern: "^[A-Z][a-zA-Z0-9]*$"
+      example: "MyClass"
+    interfaces:
+      pattern: "^[A-Z][a-zA-Z0-9]*$"
+      example: "MyInterface"
+    methods:
+      pattern: "^[a-z][a-zA-Z0-9]*$"
+      example: "myMethod"
+    variables:
+      pattern: "^[a-z][a-zA-Z0-9]*$"
+      example: "myVariable"
+    constants:
+      pattern: "^[A-Z][A-Z0-9_]*$"
+      example: "MY_CONSTANT"
+  formatting:
+    indentation:
+      type: "spaces"
+      size: 4
+    line_length:
+      max: 100
+    braces:
+      class_definition: "next_line"
+      method_definition: "next_line"
+      other_blocks: "same_line"
+    whitespace:
+      before_brace: true
+      around_operators: true
+  comments:
+    file_header:
+      required: true
+      format: "/* ClassName.java - Description */"
+    class_comments:
+      required: true
+      format: "/** Class description */"
+    method_comments:
+      required: true
+      format: "/** Method description */"
+    inline_comments:
+      recommended: true
+      format: "// Comment"
+  exception_handling:
+    try_with_resources: true
+    specific_exceptions: true
+  logging:
+    use_logging_framework: true
+    framework: "SLF4J"
+  testing:
+    unit_tests:
+      required: true
+      framework: "JUnit"
+    coverage:
+      min_coverage: 80
+  version_control:
+    branch_naming:
+      pattern: "^[a-z0-9._-]+$"
+      example: "feature-new-functionality"
+    commit_messages:
+      format: "type(scope): subject"
+      types:
+        - "feat"
+        - "fix"
+        - "docs"
+        - "style"
+        - "refactor"
+        - "test"
+        - "chore"

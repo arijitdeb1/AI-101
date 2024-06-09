@@ -1,0 +1,98 @@
+
+spring_boot_coding_standards:
+  project_structure:
+    base_package: "com.example.project"
+    folders:
+      - "src/main/java"
+      - "src/main/resources"
+      - "src/test/java"
+      - "src/test/resources"
+  naming_conventions:
+    packages:
+      pattern: "^[a-z]+(\.[a-z][a-z0-9]*)*$"
+      example: "com.example.project"
+    classes:
+      pattern: "^[A-Z][a-zA-Z0-9]*$"
+      example: "MyService"
+    interfaces:
+      pattern: "^[A-Z][a-zA-Z0-9]*$"
+      example: "MyServiceInterface"
+    methods:
+      pattern: "^[a-z][a-zA-Z0-9]*$"
+      example: "myServiceMethod"
+    variables:
+      pattern: "^[a-z][a-zA-Z0-9]*$"
+      example: "myVariable"
+    constants:
+      pattern: "^[A-Z][A-Z0-9_]*$"
+      example: "MY_CONSTANT"
+  formatting:
+    indentation:
+      type: "spaces"
+      size: 4
+    line_length:
+      max: 120
+    braces:
+      class_definition: "next_line"
+      method_definition: "next_line"
+      other_blocks: "same_line"
+    whitespace:
+      before_brace: true
+      around_operators: true
+  annotations:
+    class_level:
+      order: 
+        - "@Entity"
+        - "@Table"
+        - "@Service"
+        - "@Controller"
+        - "@RestController"
+    method_level:
+      order: 
+        - "@GetMapping"
+        - "@PostMapping"
+        - "@PutMapping"
+        - "@DeleteMapping"
+  dependency_injection:
+    use_constructor_injection: true
+    avoid_field_injection: true
+  exception_handling:
+    use_global_exception_handler: true
+    global_exception_handler_class: "GlobalExceptionHandler"
+  logging:
+    use_logging_framework: true
+    framework: "SLF4J"
+    log_level: "INFO"
+  testing:
+    unit_tests:
+      required: true
+      framework: "JUnit"
+      use_spring_boot_test: true
+    integration_tests:
+      required: true
+      framework: "JUnit"
+      use_spring_boot_test: true
+    coverage:
+      min_coverage: 85
+  configuration:
+    externalize_configuration: true
+    config_file: "application.yml"
+    use_profiles: true
+    profiles:
+      - "dev"
+      - "test"
+      - "prod"
+  version_control:
+    branch_naming:
+      pattern: "^[a-z0-9._-]+$"
+      example: "feature-new-endpoint"
+    commit_messages:
+      format: "type(scope): subject"
+      types:
+        - "feat"
+        - "fix"
+        - "docs"
+        - "style"
+        - "refactor"
+        - "test"
+        - "chore"
