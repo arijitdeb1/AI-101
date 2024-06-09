@@ -18,7 +18,9 @@ Below settings are available for Copilot during registration
 ## IntelliJ IDE Setup
 1. Intellij >> Settings >> Plugin >> search and install GitHub Copilot plugin and restart IDE
 2. Sign to GitHub Copilot as suggested over IDE
+
 ![ScreenShot](/images/copilot-signin.PNG?raw=true)
+
 3. Copilot settings over IDE (can be changed if required or else keep default)
 ![ScreenShot](/images/copilot-settings-IDE.PNG?raw=true)  
 4. GitHub Copilot icons will be available at top right corner of IDE. One icon for code completions and another for suggestions/chat.
@@ -42,9 +44,10 @@ Copilot completions help in generating code snippets, comments, documentation, a
 ![ScreenShot](/images/copilot-CLI-response.PNG?raw=true)
 
 ## Code Review based on Coding Standards
-Code Review based on coding standards defined in yaml format in below files
-[java_coding_standards.yaml]()
-[spring_coding_standards.yaml]()
+Code Review based on coding standards defined in yaml format in below files -
+
+[java_coding_standards.yaml](https://github.com/arijitdeb1/AI-101/blob/main/java_coding_standards.yaml)
+[spring_coding_standards.yaml](https://github.com/arijitdeb1/AI-101/blob/main/spring_boot_coding_standards.yaml)
 
 open the file in IDE(in any Tab) and run the below prompt to review the code.
 ![ScreenShot](/images/coding-standard.PNG?raw=true)
