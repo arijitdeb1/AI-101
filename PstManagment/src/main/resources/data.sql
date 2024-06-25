@@ -1,0 +1,1 @@
+INSERT INTO entity (id, item_type, attributes, created_dt) VALUES (1, 'type1', 'value1', CURRENT_TIMESTAMP);

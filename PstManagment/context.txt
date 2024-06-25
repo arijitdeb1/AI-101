@@ -1,0 +1,96 @@
+1. PST = Product Structure Template
+2. IOI = Item of Interest
+3. PSN = Product Structure Name
+4. PST is a structure comprising of PSN, Category and IOI.
+5. PSN is a unique identifier and is the root element for a product structure.
+6. Category is immediate children of PSN. There are multiple categories for a PSN.
+7. IOI have Category as immediate parent. There are multiple IOI for a Category.
+8. IOI is a leaf element and does not have any children.
+9. PST is a tree structure.
+10. A typical PSN comprises of name, type(value Product Structure Name) and attributes persisted a json as below:
+{
+  "name": "PSN1",
+  "type": "Product Structure Name",
+  "attributes": {
+    "Segment": "Ultrasound",
+    "Sub Segment": "Virtual Care",
+    "OPH Modality Code": "950",
+    "OPH Modality Code Description": "Virtual Care"
+  }
+}
+11. A typical Category comprises of name, type(value Category) and attributes persisted a json as below:
+{
+  "name": "Category1",
+  "type": "Category",
+  "attributes": {
+    "Item Min": "0",
+    "Item Max": "1",
+    "Category Min": "0",
+    "Category Max": "1",
+  }
+}
+12. A typical IOI comprises of name, type(value Item of Interest) and attributes persisted a json as below:
+{
+  "name": "IOI1",
+  "type": "Item of Interest",
+  "attributes": {
+    "Item Type": "Item of Interest",
+    "Item Min": "0",
+    "Item Max": "1",
+    "Category Min": "0",
+    "Category Max": "1",
+  }
+}
+
+** all values mentioned above are placeholders and can be replaced with actual values other than type which is a constant value.
+13. User has to create an instance of PSN and IOI and register them in "entity" table.
+14. Validate below items:
+    a. PSN and IOI are unique.No duplicate having same PSN and IOI name are allowed.
+    b. Segment, OPH Modality Code is mandatory for a PSN.
+    c. item Min, item Max, Category Min is mandatory for a IOI.Category Max is optional but if blank should be defaulted to 999.
+    e. IOI is unique for a Category.
+
+15. Once PSN and IOI are created user can create a PST by selecting a PSN and adding Categories and IOI to it.
+16. PST structure is as below:
+[{"Item Name":"AD_TEST_PSN030602","Item Type":"Product Structure Name","Parent":"","Item Min":"0","Item Max":"1","Category Min":"0","Category Max":"2","Create Legacy Check":"No"},{"Item Name":"CONSOLE","Item Type":"Category","Parent":"AD_TEST_PSN030602","Item Min":"0","Item Max":"1","Category Min":"0","Category Max":"1","Create Legacy Check":"No"},{"Item Name":"AD_TEST_IOI030602","Item Type":"Lead Item","Parent":"CONSOLE","Item Min":"16","Item Max":"16","Category Min":"0","Category Max":"1","Create Legacy Check":"No"},{"Item Name":"CONSOLE COMPONENTS","Item Type":"Category","Parent":"AD_TEST_PSN030602","Item Min":"0","Item Max":"1","Category Min":"0","Category Max":"1","Create Legacy Check":"No"},{"Item Name":"AD_TEST_IOI030603","Item Type":"Item of Interest","Parent":"CONSOLE COMPONENTS","Item Min":"15","Item Max":"16","Category Min":"0","Category Max":"1","Create Legacy Check":"No"}]
+17. Category will be created when the input PST structure is validated.
+18. Category name will persisted as "Item Name"+"_"+id from entity table for PSN.
+19. Below validation has to be performed for the input PST:
+    c. item Min, item Max, Category Min is mandatory for a Category.Category Max is optional but if blank should be defaulted to 999.
+    f. Category Min for Category should be greater than or equal to sum of all Category Mix for all IOIs under a Category.
+    g. Category Min and Category Max should be same for all Categories under a PSN.
+    h. Category Max should be greater than Category Min.
+    i. Item Max should be greater than Item Min.
+    j. Category Max should be greater than Item Max.
+    k. Category Min should be less than Item Min.
+    l. Category Min should be less than Item Max.
+    m. Category Max should be greater than Item Min.
+    n. Category Max should be greater than Item Max.
+    o. Category Min should be less than Item Min.
+    p. Category Min should be less than Item Max.
+    q. Category Max should be greater than Item Min.
+    r. Category Max should be greater than Item Max.
+    s. Category Min should be less than Item Min.
+    t. Category Min should be less than Item Max.
+    u. Category Max should be greater than Item Min.
+    v. Category Max should be greater than Item Max.
+    w. Category Min should be less than Item Min.
+    x. Category Min should be less than Item Max.
+    y. Category Max should be greater than Item Min.
+    z. Category Max should be greater than Item Max.
+    aa. Category Min should be less than Item Min.
+    ab. Category Min should be less than Item Max.
+    ac. Category Max should be greater than Item Min.
+    ad. Category Max should be greater than Item Max.
+    ae. Category Min should be less than Item Min.
+    af. Category Min should be less than Item Max.
+    ag. Category Max should be greater than Item Min.
+    ah. Category Max should be greater than Item Max.
+    ai. Category Min should be less than Item Min.
+    aj. Category Min should be less than Item Max.
+    ak. Category Max should be greater than Item Min.
+    al. Category Max should be greater than Item Max.
+    am. Category Min should be
+
+
+

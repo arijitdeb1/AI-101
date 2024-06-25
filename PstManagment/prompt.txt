@@ -1,0 +1,23 @@
+1. h2 database depenecency is included to the project, please do the necessary configuration to connect the database and view the same using h2-consoles
+
+2. provide create table query 'entity' having fields id,item_type,value,created_dt and insert query as part of configuration which will execute on startup
+
+3. create spring boot model class for entity
+
+4. use lombok for configuring getter/setters
+
+5. write spring boot repository for EntityModel
+
+6. refer context.txt to create a DTO class to store both PSN and IOI fields
+
+7. write a POST api to consume PSN and IOi details
+
+8. create PsnIoiService and its createPsnIoi method.write all required logic to persist the data
+
+9. write a method to validate PSN and IOI details as per #14 in context.txt
+
+10. write a curl request to create a PSN using /api/psn-ioi api
+
+11. write a curl request to create a PSN based on #10 mentioned in context.txt using /api/psn-ioi api
+
+12.

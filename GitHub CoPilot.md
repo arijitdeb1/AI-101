@@ -63,5 +63,3 @@ In GitHub Copilot Chat, type the below command
 
 
 
-
-
