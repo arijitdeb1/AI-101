@@ -158,3 +158,4 @@ Here is a sample code where we'll find the nearest match of a sentence from a gr
 * Open AI API Rate Limits - https://platform.openai.com/settings/organization/limits
 * How Assistant Work - https://platform.openai.com/docs/assistants/how-it-works
 * Fine Tuning - https://platform.openai.com/docs/guides/fine-tuning/preparing-your-dataset
+* Azure OpenAI for Data Privacy - https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy
