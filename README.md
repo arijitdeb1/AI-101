@@ -8,7 +8,7 @@ As a newcomer to the fascinating world of artificial intelligence (AI), this gui
     - how ChatGPT creates new content, such as images, music, or text, through GPT(Generative Pre-Trained Transformers) models.[Prompt Engineering and related best practises](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api).  
     - [How to use OpenAI Apis and OpenAI Playground.](https://github.com/arijitdeb1/AI-101/blob/main/OpenAI.md) 
     - General walkthrough of some popular AI Code Assistants and how to use them. 
-    - Personalized [ChatBot]() using OpenAI apis, LangChain, Python
+    - Personalized [ChatBot](https://github.com/arijitdeb1/AI-101/blob/main/chatbot.md) using OpenAI apis, LangChain, Python
 
 
 
